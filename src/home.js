@@ -1,10 +1,42 @@
 /* eslint-disable semi */
 export default () => {
   const viewHome = `
-    <h2 class="text-center">Bienvenido a LabsConnect</h2>
-    <figure class="text-center">
-        <img clas="image" src="https://www.google.com/search?q=laboratoria+bootcamp+imagenes&tbm=isch&ved=2ahUKEwje3PTwspuAAxVIFN4AHeleAwEQ2-cCegQIABAA&oq=Laboratoria+boo&gs_lcp=CgNpbWcQARgAMgQIIxAnMgQIIxAnMgcIABAYEIAEMgcIABAYEIAEOgUIABCABDoICAAQgAQQsQM6CggAEIoFELEDEEM6CwgAEIAEELEDEIMBOgcIABCKBRBDOgcIIxDqAhAnOggIABCxAxCDAToECAAQAzoGCAAQCBAeOgkIABAYEIAEEApQrxBY_G9g2n5oAXAAeACAAeoCiAHBIZIBCDAuMjEuNC4xmAEAoAEBqgELZ3dzLXdpei1pbWewAQrAAQE&sclient=img&ei=_yq4ZJ7hLsio-LYP6b2NCA&bih=467&biw=1155&rlz=1C5CHFA_enMX897MX897#imgrc=TvsX2bcq3KAzqM"></img>
-    </figure>`;
+    <header>
+    <h1>LabsConnect</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#/">LabsConnect</a>
+        </li>
+        <li>
+          <a href="#/iniciodeSesion">Inicio de Sesión</a>
+        </li>
+        <li>
+          <a href="#/crearcuenta">Crear cuenta</a>
+        </li>
+        <li>
+          <a href="#/Muro">Muro</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+  <h2>Start by creating your account</h2>
+        <label for="nombre">Full name</label>
+        <input type="text" id="nombre">
+        <label for="correo">Email</label>
+        <input type="email" id="correo">
+        <label for="contrasena">Password</label>
+        <input type="password" id="contrasena">
+        <label for="confirmar">Confirm password</label>
+        <input type="password" id="confirmar">
+        <button type="submit">Sign Up</button>
+  </section>
+
+
+  `;
+
+    
   const divElem = document.createElement('div');
   divElem.innerHTML = viewHome;
   return divElem;
