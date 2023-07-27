@@ -1,4 +1,4 @@
-import logo from "./imagenes/elq.png"
+import logo from "../imagenes/elq.png"
 export default () => {
   const viewiniciodeSesion = `
     <h2 class="tex-center">Inicio de sesión </h2>

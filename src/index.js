@@ -1,5 +1,5 @@
-import Home from '../home.js';
-import iniciodeSesion from '../inicioSesion.js';
+import Home from './view/home.js';
+import iniciodeSesion from './view/inicioSesion.js';
 
 const components = {
   home: Home,
