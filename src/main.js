@@ -1,5 +1,12 @@
-// Este es el punto de entrada de tu aplicacion
+import {changeView} from './lib/rutas.js';
+import {login} from './vistas/login.js';
+//const root = document.getElementById("root");
 
-import { myFunction } from './lib/index.js';
+const init = () => {
+  document.getElementById("root").appendChild(login());
+  window.addEventListener('hashchange', () => {
+    changeView(window.location.hash);
+  });
+};
 
-myFunction();
+window.addEventListener('load', init);
