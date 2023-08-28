@@ -1,4 +1,5 @@
 import { crearPublicacion } from '../init-firebase';
+import { juntarPublis } from '../init-firebase';
 
 export const muro = () => {
   const viewMuro = document.createElement('div');
@@ -6,6 +7,7 @@ export const muro = () => {
   <div class="container p-4">
     <div class="row">
       <div class="col-md-6">
+      </div>
         <div class="card">
           <div class="card-body">
             <form id="publicaciones">
@@ -29,6 +31,8 @@ export const muro = () => {
             </form>
           </div>
         </div>
+        <br><br><br><br>
+        <div class="col-md-6" id="contenedorPublicaciones"></div>
       </div>
     </div>
   </div>`;
@@ -37,6 +41,7 @@ export const muro = () => {
 };
 export function muroComportamiento() {
   const btnForma = document.getElementById('btnForma');
+  const contenedorPublicaciones = document.getElementById('contenedorPublicaciones');
   document.getElementById('Actividad');
 
   const $select = document.querySelector('#Actividad');
@@ -57,4 +62,18 @@ export function muroComportamiento() {
     });
     console.log('Lista para conectar');
   });
-};
+  juntarPublis().then((publis) => {
+    console.log('correcto');
+    publis.forEach((doc) => {
+      const publi = document.createElement('p');
+      publi.classList.add('publi');
+      publi.textContent = doc.data().publicacion;
+      contenedorPublicaciones.appendChild(publi);
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, " => ", doc.data());
+    });
+  }).catch((error) => {
+    console.log(error);
+  });
+  console.log('muestra mis publicaciones');
+}

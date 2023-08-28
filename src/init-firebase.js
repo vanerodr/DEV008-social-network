@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, } from "firebase/auth";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, onSnapshot, getDocs } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,9 +31,17 @@ const firestore = getFirestore(app);
 
 export function crearPublicacion(actividad, descripcion) {
   const direccionColeccion = collection(firestore, 'post');
+
   const publicacion = {
     actividad,
     publicacion: descripcion,
   };
   return addDoc(direccionColeccion, publicacion);
+}
+const db = getFirestore();
+
+export function juntarPublis() {
+  const lugarDeColeccion = collection(db, 'post');
+
+  return getDocs(lugarDeColeccion);
 }

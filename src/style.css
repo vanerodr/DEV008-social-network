@@ -177,3 +177,8 @@ cursor: alias;
   background-color: #e51495;
   border: #e51495;
 }
+.publi {
+  padding: 30px;
+  border: 1px solid palevioletred;
+  border-radius: 15px;
+}
